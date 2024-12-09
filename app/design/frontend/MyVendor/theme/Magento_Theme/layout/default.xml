@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+     <referenceContainer name="content">
+     <block class="Magento\Framework\View\Element\Template" name="custom.script" template="Magento_Theme::js.phtml" />
+     <block class="Magento\Framework\View\Element\Template" name="modal.block" template="Magento_Cms::modal.phtml" />
+      </referenceContainer>
+        <referenceContainer name="columns">
+
+                <container name="sidebar.main" as="sidebar_main" label="Sidebar main" htmlTag="div" htmlClass="sidebar-main" before="-" />
+                <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional" htmlTag="div" htmlClass="sidebar-additional" />
+
+        </referenceContainer>
+
+    </body>
+</page>
+
