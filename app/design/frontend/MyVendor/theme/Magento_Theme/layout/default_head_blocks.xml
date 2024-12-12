@@ -2,6 +2,17 @@
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
+        <font src="fonts/texta/black/Texta-Black.woff2"/>
+        <font src="fonts/texta/bold/Texta-Bold.ttf"/>
+        <font src="fonts/texta/heavy/Texta-Heavy.woff2"/>
+        <font src="fonts/texta/italic/Texta-It.woff2"/>
+        <font src="fonts/texta/medium/Texta-Medium.ttf"/>
+        <font src="fonts/texta/regular/Texta-Regular.woff2"/>
+        <remove src="fonts/opensans/light/opensans-300.woff2"/>
+        <remove src="fonts/opensans/regular/opensans-400.woff2"/>
+        <remove src="fonts/opensans/semibold/opensans-600.woff2"/>
+        <remove src="fonts/opensans/bold/opensans-700.woff2"/>
+        <remove src="fonts/Luma-Icons.woff2"/>
         <css src="Magento_Theme::css/slick.css" />
     </head>
 </page>
