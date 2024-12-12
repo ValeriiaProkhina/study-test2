@@ -78,4 +78,10 @@ button {
         background-color: #ffa726;
     }
 }
-
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__mobile_l) {
+    .catalog-product-view {
+        .product.media {
+            margin-bottom: @indent__base;
+        }
+    }
+}
