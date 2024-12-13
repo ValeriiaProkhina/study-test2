@@ -85,3 +85,30 @@ button {
         }
     }
 }
+.product-info-main {
+    .product-info-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        white-space: nowrap;
+        .price-container.price-final_price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            text-transform: uppercase;
+            color: @custom-text-color;
+            font-weight: @font-weight__bold;
+        }
+        .product-info-stock-sku {
+            padding-left: 10px;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .product-info-main {
+        .action.tocart {
+            background-color: @button-custom-background;
+            border-color: transparent;
+        }
+    }
+}
