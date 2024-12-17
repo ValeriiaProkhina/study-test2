@@ -1,0 +1,20 @@
+
+<!--@subject {{trans "Contact Form"}} @-->
+<!--@vars {
+"var data.comment":"Comment",
+"var data.email":"Sender Email",
+"var data.name":"Sender Name",
+"var data.telephone":"Sender Telephone",
+"var this.getUrl($store, 'contact/index')":"Contact page"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p><strong>{{trans "Ім'я"}}</strong> - {{var data.name}}
+<strong>{{trans "Номер телефону"}}</strong> - {{var data.telephone}}
+<strong>{{trans "Адреса сторінки"}}</strong> - <a href="{{var this.getUrl($store, 'contact/index')}}" target="_blank">{{var this.getUrl($store, 'contact/index')}}</a>
+<strong>{{trans "Тематика звернення"}}</strong> - {{var data.comment}}
+    <strong>{{trans "Email"}}</strong> - <a href="mailto:{{var data.email}}" target="_blank">{{var data.email}}</a>
+<strong>{{trans "CLIENT_ID"}}</strong> - id98896768885568090696</p>
+
+{{template config_path="design/email/footer_template"}}
