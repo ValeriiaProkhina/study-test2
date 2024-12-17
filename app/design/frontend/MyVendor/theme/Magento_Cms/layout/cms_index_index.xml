@@ -2,6 +2,10 @@
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="3columns">
     <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.script" template="Magento_Theme::js.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="modal.block" template="Magento_Cms::modal.phtml" />
+        </referenceContainer>
         <referenceContainer name="sidebar.main">
          <block class="Magento\Framework\View\Element\Template" name="template.one.block" template="Magento_Cms::template_one.phtml" >
             <block class="Magento\Framework\View\Element\Template" name="custom.tabs.block" template="Magento_Cms::tabs.phtml" >
