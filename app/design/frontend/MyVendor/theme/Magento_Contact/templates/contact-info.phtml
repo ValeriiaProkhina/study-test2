@@ -1,0 +1,47 @@
+<?php
+
+/** @var \Magento\Framework\Escaper $escaper
+ * @var  \Magento\Framework\View\Element\Template $block
+ */
+?>
+<div class="contact-info">
+    <div class="contact-info-image">
+        <img src="<?php echo ($block->getViewFileUrl('Magento_Theme::images/company-logo.svg')); ?>" alt="Company Logo" width="140"/>
+    </div>
+    <div class="contact-info-box">
+        <div class="contact-info-phones">
+            <h2 class="contact-info-title"><?=$escaper->escapeHtml(__('Phones'))?></h2>
+            <ul class="contact-info-list">
+                <li class="contact-info-item">
+                    <span class="contact-info-label"><?=$escaper->escapeHtml(__('Client service'))?></span>
+                    <span><?=$escaper->escapeHtml(__('+1 312-239-0843'))?></span>
+                </li>
+                <li class="contact-info-item">
+                    <span class="contact-info-label"><?=$escaper->escapeHtml(__('Support team'))?></span>
+                    <span><?=$escaper->escapeHtml(__('+38 (044) 362-12-09'))?></span>
+                </li>
+                <li class="contact-info-item">
+                    <span class="contact-info-label"><?=$escaper->escapeHtml(__('Department of Human Resources'))?></span>
+                    <span><?=$escaper->escapeHtml(__('+38 (093) 445-48-87'))?></span>
+                </li>
+            </ul>
+        </div>
+        <div class="contact-info-emails">
+            <h2 class="contact-info-title"><?=$escaper->escapeHtml(__('Emails'))?>:</h2>
+            <ul class="contact-info-list">
+                <li class="contact-info-item">
+                    <span class="contact-info-label"><?=$escaper->escapeHtml(__('Client service department'))?></span>
+                    <span><a href="mailto:order@perspective.net.ua"><?=$escaper->escapeUrl(__('order@perspective.net.ua'))?></a></span>
+                </li>
+                <li class="contact-info-item">
+                    <span class="contact-info-label"><?=$escaper->escapeHtml(__('Support department'))?></span>
+                    <span><a href="mailto:support@perspective.net.ua "><?=$escaper->escapeUrl(__('support@perspective.net.ua'))?></a></span>
+                </li>
+                <li class="contact-info-item">
+                    <span class="contact-info-label"><?=$escaper->escapeHtml(__('Quality control department'))?></span>
+                    <span><?=$escaper->escapeHtml(__('qualitycheck@perspective.net.ua'))?></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

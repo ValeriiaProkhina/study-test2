@@ -1,6 +1,11 @@
+<?php
+
+/** @var \Magento\Framework\Escaper $escaper
+ */
+?>
 <div id="modal">
     <div class="modal-body-content">
-        <h2><?=$block->escapeHtml(__('Choose a date')) ?></h2>
+        <h2><?=$escaper->escapeHtml(__('Choose a date')) ?></h2>
         <label>
             <input id="calendar" type="text" placeholder="Select a date" />
         </label>

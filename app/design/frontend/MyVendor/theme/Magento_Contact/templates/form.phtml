@@ -1,0 +1,110 @@
+<?php
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+/** @var \Magento\Framework\Escaper $escaper
+* @var \Magento\Contact\Block\ContactForm $block
+* @var \Magento\Contact\ViewModel\UserDataProvider $viewModel
+*/
+
+$viewModel = $block->getViewModel();
+?>
+<form class="form contact"
+      action="<?= $escaper->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('Write Us')) ?></span></legend><br />
+
+        <div class="field name">
+            <label class="label" for="name"></label>
+            <div class="control">
+                <input name="name"
+                       id="name"
+                       title="<?= $escaper->escapeHtmlAttr(__('Name')) ?>"
+                       value="<?= $escaper->escapeHtmlAttr($viewModel->getUserName()) ?>"
+                       class="input-text"
+                       type="text"
+                       placeholder="<?= $escaper->escapeHtml(__('Name')) ?>"
+                       maxlength="15"
+                       data-validate="{required:true}"/>
+            </div>
+        </div>
+
+        <div class="field telephone">
+            <label class="label" for="telephone"></label>
+            <div class="control">
+                <input name="telephone"
+                       id="telephone"
+                       title="<?= $escaper->escapeHtmlAttr(__('Phone')) ?>"
+                       value="<?= $escaper->escapeHtmlAttr($viewModel->getUserTelephone()) ?>"
+                       class="input-text"
+                       type="tel"
+                       placeholder="<?= $escaper->escapeHtml(__('Phone')) ?>"
+                       data-validate="{required:true, 'validate-ua-operator': true}" />
+            </div>
+        </div>
+        <div class="field email">
+            <label class="label" for="email"></label>
+            <div class="control">
+                <input name="email"
+                       id="email"
+                       title="<?= $escaper->escapeHtmlAttr(__('Email')) ?>"
+                       value="<?= $escaper->escapeHtmlAttr($viewModel->getUserEmail()) ?>"
+                       class="input-text"
+                       type="email"
+                       placeholder="<?= $escaper->escapeHtml(__('Email')) ?>"
+                       data-validate="{required:true, 'validate-email-custom': true}"
+                       data-mage-init='{"mage/trim-input":{}}'
+                />
+            </div>
+        </div>
+        <div class="field comment">
+            <label class="label" for="comment"><span><?= $escaper->escapeHtml(__('Message')) ?></span></label>
+            <div class="control">
+                <select name="comment"
+                        id="comment"
+                        title="<?= $escaper->escapeHtmlAttr(__('Message')) ?>"
+                        class="input-text"
+                        data-validate="{required:true}"
+                ><?= $escaper->escapeHtml($viewModel->getUserComment()) ?>
+                    <option value="" disabled selected></option>
+                    <option value="general"><?= $escaper->escapeHtml(__('General question')) ?></option>
+                    <option value="support"><?= $escaper->escapeHtml(__('Support Request')) ?></option>
+                    <option value="feedback"><?= $escaper->escapeHtml(__('Feedback')) ?></option>
+                </select>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $escaper->escapeHtmlAttr(__('Send')) ?>" class="action submit btn-send"
+                    id="send22"
+                <?php if ($block->getButtonLockManager()->isDisabled('contact_us_form_submit')): ?>
+                    disabled="disabled"
+                <?php endif; ?>>
+                <span><?= $escaper->escapeHtml(__('Send')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "contact-form"
+            },
+            "Magento_Contact/js/validate-phone-format": {}
+        },
+        "#telephone": {
+            "Magento_Contact/js/validate-phone": {}
+        },
+        "#email": {
+            "Magento_Contact/js/validate-email": {}
+        }
+    }
+</script>

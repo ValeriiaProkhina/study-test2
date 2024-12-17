@@ -1,3 +1,7 @@
+<?php
+
+/** @var \Magento\Framework\Escaper $escaper */
+?>
 <div class="product data items tabs-container" data-mage-init='{"Magento_Cms/js/tabs": {}}'>
     <div class="item title" data-role="collapsible">
         <a class="switch" data-toggle="trigger" href="#tab-one">Tab One</a>
@@ -8,7 +12,7 @@
     </div>
     <div id="tab-two" class="item content" data-role="content">
         <button id="button" data-mage-init='{"modal": {}}'>
-            <span><?=$block->escapeHtml(__('Click me'))?></span>
+            <span><?=$escaper->escapeHtml(__('Click me'))?></span>
         </button>
     </div>
 </div>
