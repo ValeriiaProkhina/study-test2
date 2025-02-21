@@ -26,3 +26,4 @@ define(["jquery", "slick"], function ($) {
         });
     });
 });
+

@@ -18,7 +18,7 @@ define(['jquery'], function ($) {
 
                 this.isFilteringRates = true
 
-                const filteredRates = rates.filter(rate => rate.amount <= 10)
+                const filteredRates = rates.filter(rate => rate.amount <= 1000)
                 this.rates(filteredRates)
                 console.log('After filtering', this.rates())
                 this.isFilteringRates = false
