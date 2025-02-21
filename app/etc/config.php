@@ -377,6 +377,11 @@ return [
         'PayPal_BraintreeCustomerBalance' => 1,
         'PayPal_BraintreeGiftCardAccount' => 1,
         'PayPal_BraintreeGiftWrapping' => 1,
-        'PayPal_BraintreeGraphQl' => 1
+        'PayPal_BraintreeGraphQl' => 1,
+        'Vendor_CheckoutEnhancements' => 1,
+        'Vendor_CheckoutFieldEnhancer' => 1,
+        'Vendor_CheckoutOrderSummary' => 1,
+        'Vendor_CustomDataResolver' => 1,
+        'Vendor_CustomShippingInfo' => 1
     ]
 ];
