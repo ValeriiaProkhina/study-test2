@@ -1,0 +1,32 @@
+<?php
+/** @var $block \Magento\ConfigurableProduct\Block\Product\View\Type\Configurable*/
+$_product    = $block->getProduct();
+$_attributes = $block->getAllowAttributes();
+?>
+<?php foreach ($_attributes as $attribute): ?>
+    <div class="dropdown-dialog"
+         data-role="dropdown-swatch"
+         data-mage-init='{"dropdownSwatch":{}}'
+         data-attribute-code="<?= $block->escapeHtmlAttr($attribute->getAttributeCode()) ?>">
+        <div class="product-options">
+            <div class="product-option" data-attribute-code="<?= $block->escapeHtmlAttr($attribute->getAttributeCode()) ?>">
+                <label><?= $block->escapeHtml($attribute->getLabel()) ?></label>
+                <div class="dropdown-dialog" data-role="dropdown-swatch">
+                    <button type="button" class="dropdown-toggle">
+                        <?= __('Select %1', $block->escapeHtml($attribute->getLabel())) ?>
+                    </button>
+                    <ul class="dropdown-options">
+                        <?php foreach ($attribute->getOptions() as $option): ?>
+                            <?php if (!empty($option['value_index'])): ?>
+                                <li data-value="<?= $block->escapeHtmlAttr($option['value_index']) ?>">
+                                    <?= $block->escapeHtml($option['label']) ?>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
